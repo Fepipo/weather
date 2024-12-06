@@ -44,11 +44,13 @@ function animation_form(form, executar_animacao, div_child) {
   });
 }
 
-function criar_img_200(master, caminho, clock) {
-  if (clock === "01d") {
-    caminho = "imagens/clear_sky_day.png";
-  } else {
-    caminho = "imagens/clear_sky_night.png";
+function criar_img_200(master, caminho, descricao, clock) {
+  if (descricao === "Clear") {
+    if (clock === "01d") {
+      caminho = "imagens/clear_sky_day.png";
+    } else {
+      caminho = "imagens/clear_sky_night.png";
+    }
   }
 
   const img = document.createElement("img");
@@ -84,7 +86,12 @@ function criar_frame_200(form, json_atribute, executar_animacao) {
       criar_img_200(div, "imagens/snow.png");
       break;
     case "Clear":
-      criar_img_200(div, undefined, json_atribute.weather[0].icon);
+      criar_img_200(
+        div,
+        undefined,
+        json_atribute.weather[0].main,
+        json_atribute.weather[0].icon
+      );
       break;
     case "Clouds":
       criar_img_200(div, "imagens/clouds.png");
@@ -173,6 +180,7 @@ form.addEventListener("submit", async function (event) {
 
   try {
     const json_retornado = await call_api(city_api_value);
+    console.log(json_retornado);
 
     title_city.innerHTML = `${city_api_value} (${json_retornado.sys.country})`;
 
