@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+@keyframes animacao_form_sucesso {
+  0% {
+    width: var(--start-width);
+    height: var(--start-height);
+  }
+  100% {
+    width: 400px;
+    height: 450px;
+  }
+}
+
+@keyframes animacao_form_falha {
+  0% {
+    width: var(--start-width);
+    height: var(--start-height);
+  }
+  100% {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+* {
+  font-family: "Lexend";
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  z-index: 1;
+}
+
+form {
+  background-color: #191b1e;
+  border-radius: 17px;
+  padding: 17px;
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+.div_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.size_i_location {
+  width: 16px;
+  height: 16px;
+  transform: scale(1.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.margin-input {
+  margin-right: 5px;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.div_img_info_class {
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.div_informacoes_finais_class {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.div_opacity {
+  opacity: 0;
+}
+
+.div_animation_opacity {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
