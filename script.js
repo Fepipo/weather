@@ -180,7 +180,6 @@ form.addEventListener("submit", async function (event) {
 
   try {
     const json_retornado = await call_api(city_api_value);
-    console.log(json_retornado);
 
     title_city.innerHTML = `${city_api_value} (${json_retornado.sys.country})`;
 
